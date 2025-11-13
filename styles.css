@@ -1,0 +1,136 @@
+:root{
+  --brand: #0d6efd; 
+  --muted: #6c757d;
+  --bg-gradient-start: #ffffff;
+  --bg-gradient-end: #f4f7fb;
+  --card-radius: 14px;
+  --shadow-lg: 0 10px 30px rgba(16,24,40,0.08);
+}
+
+html,body{height:100%;}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #12202b;
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition: background-color .35s ease, color .25s ease;
+}
+
+.site-header{
+  background: linear-gradient(90deg, rgba(13,110,253,0.95), rgba(59,130,246,0.9));
+  color: #fff;
+  /* Nota: El padding original lo maneja ahora el navbar de bootstrap, 
+    pero lo dejamos por si acaso.
+  */
+  padding: .8rem 0;
+}
+.site-title{ font-weight:600; color:#fff; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: default; }
+.brand-logo{ width:56px; height:56px; background: #fff; border: 1px solid rgba(2,6,23,0.06); }
+.brand-logo strong{ display:none; }
+
+/* Logo sizing + hover micro-animation (disabled on touch devices) */
+.brand-logo svg.logo-svg{ width:34px; height:34px; display:block; }
+.brand-logo, .brand-logo svg{ transition: transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .18s ease; }
+.brand-logo{ display:inline-flex; align-items:center; justify-content:center; border-radius:50%; }
+.brand-logo:hover{ transform: translateY(-3px); box-shadow: 0 8px 20px rgba(16,24,40,0.08); }
+.brand-logo svg{ will-change: transform; }
+
+/* Page micro-interactions inside the SVG */
+.brand-logo svg .left, .brand-logo svg .right{ transform-origin: 50% 50%; transition: transform .28s cubic-bezier(.2,.9,.2,1); }
+.brand-logo:hover svg{ transform: scale(1.05); }
+.brand-logo:hover svg .left{ transform: translateY(-2px) rotate(-4deg); }
+.brand-logo:hover svg .right{ transform: translateY(-2px) rotate(4deg); }
+
+@media (hover: none){
+  .brand-logo:hover{ transform: none; box-shadow: none; }
+  .brand-logo:hover svg{ transform: none; }
+  .brand-logo:hover svg .left, .brand-logo:hover svg .right{ transform: none; }
+}
+
+/* Estilos para los links del NAV.
+  Se aplica a .navbar-nav para que funcione con la nueva estructura.
+*/
+.navbar-nav .nav-link{ color: rgba(255,255,255,0.85); font-weight:500; }
+.navbar-nav .nav-link:hover{ color:#fff; text-decoration:underline; }
+
+.card{ border-radius: var(--card-radius); transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.profile-card{ border-left: 6px solid rgba(13,110,253,0.95); }
+.aside-card{ border-top: 4px solid rgba(13,110,253,0.12); }
+
+.lead{ color: #234; }
+
+.carousel-inner img{ max-height: 420px; object-fit: cover; }
+
+.carousel .carousel-item{
+  transition: transform .7s cubic-bezier(.25,.8,.25,1), opacity .6s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.carousel .carousel-item img{
+  transition: transform .7s ease;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode p, .dark-mode li, .dark-mode a, .dark-mode span, .dark-mode small, .dark-mode label,
+.dark-mode .nav-link, .dark-mode .lead, .dark-mode .card-title, .dark-mode .card-text,
+.dark-mode .text-muted {
+  color: #e6eef8 !important;
+}
+
+.dark-mode .text-muted, .dark-mode small { color: #9fb3d6 !important; }
+
+
+footer{ font-size: .9rem; }
+
+.form-control{ border-radius: 10px; }
+
+.btn{ border-radius: 10px; }
+
+.dark-mode, .dark-mode body, .dark-mode html{
+  background: #071124 !important;
+  color: #e6eef8 !important;
+}
+.dark-mode .site-header{ background: linear-gradient(90deg,#021025,#062033) !important; }
+.dark-mode .site-title, .dark-mode .nav .nav-link, .dark-mode .navbar-nav .nav-link{ color: rgba(255,255,255,0.9) !important; }
+.dark-mode .brand-logo{ background: #071124; }
+.dark-mode .card{ background: #0d1b28; color: #d7e9fb; box-shadow: none; border: 1px solid rgba(255,255,255,0.04); }
+.dark-mode .profile-card{ border-left-color: rgba(79,111,224,0.9); }
+.dark-mode .aside-card{ border-top-color: rgba(79,111,224,0.08); }
+.dark-mode footer{ background: transparent; color: #9fb3d6; }
+.dark-mode .bg-light{ background: transparent !important; }
+.dark-mode a{ color: #a8c6ff !important; }
+.dark-mode .form-control{ background: #071428; color: #cfe8ff; border-color: rgba(255,255,255,0.06); }
+.dark-mode .input-group .btn{ background: rgba(255,255,255,0.04); color: #dbefff; border-color: rgba(255,255,255,0.04); }
+.dark-mode .btn-outline-secondary{ border-color: rgba(255,255,255,0.12); color: #dbefff; }
+.dark-mode .btn-outline-primary{ border-color: rgba(168,198,255,0.2); color: #a8c6ff; }
+.dark-mode .btn-primary{ background: linear-gradient(90deg,#2b7bff,#1957ff); border-color: #0a58ca; }
+
+.shadow{ box-shadow: 0 6px 20px rgba(16,24,40,0.08); }
+
+@media (max-width: 768px){
+  .site-header{ padding: .8rem 0; }
+  /* Tu regla .nav .nav-link ya no es necesaria, la borramos o comentamos */
+  /* .nav .nav-link{ font-size: .95rem; } */
+}
+
+
+/* ===============================================
+  CÓDIGO NUEVO AÑADIDO
+  Estilos para el botón "hamburguesa" (toggler)
+  ===============================================
+*/
+.navbar-toggler {
+  /* Cambia el color del borde del botón */
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.navbar-toggler-icon {
+  /* Cambia el color de las tres líneas (el ícono) a blanco */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

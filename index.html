@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Galaxy Bookstore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    
+    <header class="site-header mb-4">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+          <a class="navbar-brand d-flex align-items-center gap-3" href="#inicio">
+            <div class="brand-logo bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" role="img" aria-label="Logo Mi Galaxia de Libros">
+              <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="36" height="36" aria-labelledby="logoTitle">
+                <title id="logoTitle">Mi Galaxia de Libros — logo</title>
+                <g fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="0.8">
+                  <path class="left" d="M6 22 L30 26 L30 44 L6 38 Z" fill="#60a5fa"/>
+                  <path class="right" d="M58 22 L34 26 L34 44 L58 38 Z" fill="#7c3aed"/>
+                  <path d="M30 26 L34 26" stroke="rgba(0,0,0,0.12)" stroke-width="0.9"/>
+                  <path d="M6 46c12-4 28-6 52 0" stroke="rgba(0,0,0,0.06)" fill="none"/>
+                </g>
+                <g class="spark">
+                  <circle cx="50" cy="10" r="3.8" fill="#fff7d6" opacity="0.95"/>
+                  <circle cx="50" cy="10" r="1.2" fill="#fff"/>
+                </g>
+              </svg>
+            </div>
+            <span class="h3 mb-0 site-title">Mi Galaxia de Libros</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarLinks">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="#acerca">Acerca de</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+    <main class="container" id="inicio">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div id="carouselLibros" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner rounded-3 shadow-lg overflow-hidden">
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/seed/libro1/1200/400" class="d-block w-100" alt="Imagen 1">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/seed/libro2/1200/400" class="d-block w-100" alt="Imagen 2">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/seed/libro3/1200/400" class="d-block w-100" alt="Imagen 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselLibros" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselLibros" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+
+          <div class="card mb-4 shadow profile-card">
+            <div class="card-body">
+              <h2 class="card-title">Bienvenido a Mi Galaxia de Libros</h2>
+              <p class="card-text lead">Un lugar para descubrir recomendaciones, reseñas y recursos para amantes de la lectura. Explora secciones con libros destacados, autores y consejos para disfrutar más la experiencia de leer.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <button id="btnAlert" class="btn btn-primary me-2">Mostrar saludo</button>
+                <button id="btnToggleDark" class="btn btn-outline-secondary" aria-pressed="false">Modo oscuro</button>
+                <a href="#contacto" class="btn btn-outline-primary">Contáctame</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 shadow">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-4">
+                <img src="https://picsum.photos/seed/autor/400/300" class="img-fluid rounded-start" alt="Autor">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Sobre este proyecto</h5>
+                  <p class="card-text">Proyecto de aprendizaje que integra HTML, CSS, Bootstrap y JavaScript. Ejemplo práctico para crear interfaces responsivas e interactivas con buen diseño visual.</p>
+                  <p class="card-text"><small class="text-muted">Última actualización: <span id="fechaFooterSmall"></span></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="col-12 col-lg-4">
+          <div class="card mb-4 aside-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Recomendaciones rápidas</h5>
+              <ul class="list-unstyled">
+                <li>• El Principito — M. Saint-Exupéry</li>
+                <li>• 1984 — G. Orwell</li>
+                <li>• Cien años de soledad — G. G. Márquez</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="card-title">Suscríbete</h6>
+              <p class="card-text">Recibe novedades por correo (simulado)</p>
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="tu@correo.com">
+                <button class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="acerca" class="mt-5">
+        <h3>Acerca de</h3>
+        <p>Este sitio es un ejercicio práctico para consolidar mis conocimientos sobre el desarrollo de paginas web & el uso de bootstrap.</p>
+      </section>
+
+      <section id="contacto" class="mt-4 mb-5">
+        <h3>Contacto</h3>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" placeholder="Tu nombre">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnContacto">Enviar mensaje</button>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="bg-light py-3 mt-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <small>Creado por: Adrián Carmona</small>
+        <small id="fechaFooter"></small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
